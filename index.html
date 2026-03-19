@@ -12,18 +12,18 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__logo">
+        <div class="header__logo anim">
             <a href="#">
                 <img src="./images/logo.png" alt="Florén">
             </a>
         </div>
 
-        <div class="header__slogan">
+        <div class="header__slogan anim">
             <h1>Luxury Flower Atelier</h1>
         </div>
 
-        <div class="header__btns">
-            <button class="header__btn btn btn--black">
+        <div class="header__btns anim">
+            <a href="#catalog" class="header__btn btn btn--black">
                 Каталог 
                 <svg width="24px" height="24px" viewBox="-4.5 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
                     <title>arrow_right [#336]</title>
@@ -37,8 +37,8 @@
                         </g>
                     </g>
                 </svg>
-            </button>
-            <button class="header__btn btn btn--gold">Собрать букет</button>
+            </a>
+            <a href="#calculator" class="header__btn btn btn--gold">Собрать букет</a>
         </div>
     </header>
 
@@ -48,7 +48,7 @@
             <img src="./images/divider-3.png" alt="divider">
         </div>
 
-        <section class="description">
+        <section class="description anim">
             <div class="container">
                 <h2>Art of Flowers</h2>
                 <p>Эксклюзивные букеты из премиальных цветов</p>
@@ -56,7 +56,7 @@
             </div>
         </section>
 
-        <section class="catalog">
+        <section class="catalog anim" id="catalog">
             <div class="container">                
                 <h2><span>Каталог</span></h2>
                 <div class="catalog__row">
@@ -108,10 +108,10 @@
             </div>
         </section>
 
-        <section class="calculator">
+        <section class="calculator" id="calculator">
             <div class="container">
                 <div class="calculator__row">
-                    <div class="calculator__left">                        
+                    <div class="calculator__left anim">                        
                         <h2>
                             <div class="divider divider--calculator">
                                 <img src="./images/divider-3.png" alt="divider">
@@ -183,6 +183,24 @@
             const size = new Choices('#size', choicesOptions);
             const wrap = new Choices('#wrap', choicesOptions);
             const card = new Choices('#card', choicesOptions);
+
+            const animatedElements = document.querySelectorAll('.anim');
+
+            if (animatedElements.length) {
+                const observer = new IntersectionObserver((entries, io) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -10% 0px'
+                });
+
+                animatedElements.forEach((element) => observer.observe(element));
+            }
         });
     </script>
 </body>
