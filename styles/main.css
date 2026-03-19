@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap");
+/* Design tokens: only colors + font families in :root (as requested) */
+:root {
+  /* Colors */
+  --color-dark-gold: #a0733c;
+  --color-gold: #ecbc74;
+  /* Font families */
+  --font-display: "Playfair Display", serif;
+  --font-text: "Lora", serif;
+  --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(16px, 0.833vw, 32px);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 16px;
+  background-color: #000;
+  background-image: url("../images/main-3.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  font-family: var(--font-text);
+}
+@media (max-width: 1199px) {
+  body {
+    background-size: auto 100vh;
+    background-position: top 5rem center;
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+input, button {
+  font-family: var(--font-ui);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 2.5rem;
+  text-decoration: none;
+  border: solid 1px transparent;
+  cursor: pointer;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+.btn--black {
+  background-color: #000;
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.btn--black svg {
+  max-width: 0.625rem;
+  margin-right: -1rem;
+  margin-left: 1rem;
+  margin-top: 0.125rem;
+}
+.btn--gold {
+  background: linear-gradient(90deg, var(--color-dark-gold), var(--color-gold), var(--color-dark-gold));
+  color: #000;
+}
+.btn--gold::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  bottom: 0.125rem;
+  right: 0.125rem;
+  border: solid 1px #000;
+  pointer-events: none;
+}
+.btn--big {
+  font-size: 1.25rem;
+}
+
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 2.25rem;
+}
+@media (min-width: 1920px) {
+  .container {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.header__logo {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 5rem;
+  font-family: var(--font-display);
+}
+.header__logo a {
+  text-decoration: none;
+  background: linear-gradient(0deg, var(--color-dark-gold), var(--color-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.header__logo img {
+  max-width: 12rem;
+}
+.header__slogan h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.05em;
+  background: linear-gradient(0deg, var(--color-dark-gold), var(--color-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.header__btns {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-bottom: 5rem;
+  gap: 1.25rem;
+}
+
+.main {
+  padding-bottom: 5rem;
+}
+@media (max-width: 1199px) {
+  .main {
+    padding-bottom: 5rem;
+  }
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.divider::before {
+  content: "";
+  display: block;
+  height: 0.75rem;
+  flex: 0 0 calc(35% - 3rem);
+  max-width: calc(35% - 3rem);
+  background-image: url("../images/line-left.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: right -3rem center;
+  margin-top: 1.25rem;
+}
+.divider::after {
+  content: "";
+  display: block;
+  height: 0.75rem;
+  flex: 0 0 calc(35% - 3rem);
+  max-width: calc(35% - 3rem);
+  background-image: url("../images/line-left.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: left -3rem center;
+  margin-top: 1.25rem;
+}
+.divider img {
+  width: 5rem;
+}
+.divider--description {
+  padding-top: 2rem;
+}
+@media (max-width: 1199px) {
+  .divider--calculator {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+.divider--calculator::before {
+  flex: 0 0 calc(50% - 3rem);
+  max-width: calc(50% - 3rem);
+}
+.divider--calculator::after {
+  flex: 0 0 calc(50% - 3rem);
+  max-width: calc(50% - 3rem);
+}
+
+.description {
+  margin-top: 2rem;
+}
+.description h2 {
+  font-size: 3rem;
+  font-family: var(--font-display);
+  color: #e7e7e7;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+.description p {
+  font-size: 1.25rem;
+  color: #e7e7e7;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  font-family: var(--font-text);
+}
+
+.catalog {
+  margin-top: 2rem;
+}
+.catalog h2 {
+  font-size: 3rem;
+  font-family: var(--font-display);
+  color: #e7e7e7;
+  text-align: center;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+}
+.catalog h2::before {
+  content: "";
+  display: block;
+  height: 0.75rem;
+  flex: 0 0 calc(40% - 3rem);
+  max-width: calc(40% - 3rem);
+  background-image: url("../images/line-left.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: right -3rem center;
+  margin-top: 0.25rem;
+}
+.catalog h2::after {
+  content: "";
+  display: block;
+  height: 0.75rem;
+  flex: 0 0 calc(40% - 3rem);
+  max-width: calc(40% - 3rem);
+  background-image: url("../images/line-left.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: left -3rem center;
+  margin-top: 0.25rem;
+}
+.catalog__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media (max-width: 767px) {
+  .catalog__row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.catalog__item {
+  background-image: url("../images/item-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 767px) {
+  .catalog__item {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+.catalog__item-photo {
+  position: relative;
+  padding: 1rem 1rem 100%;
+}
+.catalog__item-photo img {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  top: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+  width: calc(100% - 2rem);
+  height: auto;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.catalog__item-bottom {
+  padding: 1rem;
+}
+.catalog__item-bottom {
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.catalog__item-name {
+  font-family: var(--font-text);
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #e7e7e7;
+  font-weight: 300;
+}
+@media (max-width: 991px) {
+  .catalog__item-name {
+    font-size: 1.25rem;
+  }
+}
+.catalog__item-name a {
+  text-decoration: none;
+  color: #e7e7e7;
+}
+.catalog__item-price {
+  font-family: var(--font-text);
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: #e7e7e7;
+  font-weight: 300;
+}
+@media (max-width: 991px) {
+  .catalog__item-price {
+    font-size: 1.25rem;
+  }
+}
+
+.calculator {
+  margin-top: 5rem;
+  overflow: hidden;
+}
+.calculator__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media (max-width: 1199px) {
+  .calculator__row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 1199px) {
+  .calculator__left {
+    order: 1;
+  }
+}
+.calculator__right {
+  margin-bottom: -3rem;
+}
+@media (max-width: 1199px) {
+  .calculator__right {
+    order: 0;
+    text-align: center;
+  }
+}
+.calculator h2 {
+  display: inline-block;
+  font-size: 3rem;
+  font-family: var(--font-display);
+  color: #e7e7e7;
+  text-align: left;
+  font-weight: 400;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 1199px) {
+  .calculator h2 {
+    text-align: center;
+    display: block;
+  }
+}
+.calculator__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.calculator__field {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 767px) {
+  .calculator__field {
+    grid-template-columns: 1fr;
+  }
+}
+.calculator__field label {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #e7e7e7;
+  width: 7rem;
+}
+@media (max-width: 1199px) {
+  .calculator__field label {
+    font-size: 1rem;
+  }
+}
+.calculator .btn {
+  display: block;
+  text-align: center;
+  width: calc(100% - 8rem);
+  margin-left: auto;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+@media (max-width: 1199px) {
+  .calculator .btn {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .calculator .btn {
+    margin-top: 0.75rem;
+  }
+}
+
+.choices[data-type*=select-one]::after {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-image: url("../images/select-arrow.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 0;
+  transform: translateY(-50%) rotate(90deg) !important;
+  border-color: transparent !important;
+  margin-top: 0 !important;
+}
+
+.choices[data-type*=select-one] .choices__inner {
+  background-color: transparent;
+  color: #e7e7e7;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list--dropdown .choices__item--selectable.is-selected,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-selected,
+.choices__list--dropdown, .choices__list[aria-expanded] {
+  background-color: #000;
+  color: #e7e7e7;
+}
+
+.choices[data-type*=select-one] .choices__inner,
+.choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+@media (max-width: 1199px) {
+  .choices[data-type*=select-one] .choices__inner,
+  .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florén — Luxury Flower Atelier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="#">
+                <img src="./images/logo.png" alt="Florén">
+            </a>
+        </div>
+
+        <div class="header__slogan">
+            <h1>Luxury Flower Atelier</h1>
+        </div>
+
+        <div class="header__btns">
+            <button class="header__btn btn btn--black">
+                Каталог 
+                <svg width="24px" height="24px" viewBox="-4.5 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+                    <title>arrow_right [#336]</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Dribbble-Light-Preview" transform="translate(-305.000000, -6679.000000)" fill="#ecbc74">
+                            <g id="icons" transform="translate(56.000000, 160.000000)">
+                                <path d="M249.365851,6538.70769 L249.365851,6538.70769 C249.770764,6539.09744 250.426289,6539.09744 250.830166,6538.70769 L259.393407,6530.44413 C260.202198,6529.66364 260.202198,6528.39747 259.393407,6527.61699 L250.768031,6519.29246 C250.367261,6518.90671 249.720021,6518.90172 249.314072,6519.28247 L249.314072,6519.28247 C248.899839,6519.67121 248.894661,6520.31179 249.302681,6520.70653 L257.196934,6528.32352 C257.601847,6528.71426 257.601847,6529.34685 257.196934,6529.73759 L249.365851,6537.29462 C248.960938,6537.68437 248.960938,6538.31795 249.365851,6538.70769" id="arrow_right-[#336]"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <button class="header__btn btn btn--gold">Собрать букет</button>
+        </div>
+    </header>
+
+    <main class="main">       
+        
+        <div class="divider divider--description">
+            <img src="./images/divider-3.png" alt="divider">
+        </div>
+
+        <section class="description">
+            <div class="container">
+                <h2>Art of Flowers</h2>
+                <p>Эксклюзивные букеты из премиальных цветов</p>
+                <p>Каждая композиция создается флористом вручную</p>
+            </div>
+        </section>
+
+        <section class="catalog">
+            <div class="container">                
+                <h2><span>Каталог</span></h2>
+                <div class="catalog__row">
+                    <div class="catalog__item">
+                        <div class="catalog__item-photo">
+                            <img src="./images/catalog-item-1.png" alt="catalog-item-1">
+                        </div>
+                        <div class="catalog__item-bottom">
+                            <div class="catalog__item-name"><a href="#">Royal Rose</a></div>
+                            <div class="catalog__item-price">
+                                12 000 ₽
+                            </div>
+                            <div class="catalog__item-btn">
+                                <a href="#" class="btn btn--gold btn--big">12 000 ₽</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="catalog__item-photo">
+                            <img src="./images/catalog-item-2.png" alt="catalog-item-2">
+                        </div>
+                        <div class="catalog__item-bottom">
+                            <div class="catalog__item-name"><a href="#">White Garden</a></div>
+                            <div class="catalog__item-price">
+                                9 500 ₽
+                            </div>
+                            <div class="catalog__item-btn">
+                                <a href="#" class="btn btn--gold btn--big">9 500 ₽</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="catalog__item-photo">
+                            <img src="./images/catalog-item-3.png" alt="catalog-item-3">
+                        </div>
+                        <div class="catalog__item-bottom">
+                            <div class="catalog__item-name"><a href="#">Floren Signature</a></div>
+                            <div class="catalog__item-price">
+                                18 500 ₽
+                            </div>
+                            <div class="catalog__item-btn">
+                                <a href="#" class="btn btn--gold btn--big">18 500 ₽</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="calculator">
+            <div class="container">
+                <div class="calculator__row">
+                    <div class="calculator__left">                        
+                        <h2>
+                            <div class="divider divider--calculator">
+                                <img src="./images/divider-3.png" alt="divider">
+                            </div>
+                            <span>Соберите ваш букет</span>                            
+                        </h2>
+                        <div class="calculator__form">
+                            <div class="calculator__field">
+                                <label for="flowers">Цветы</label>                                
+                                <select id="flowers" name="flowers">
+                                    <option value="rose-peony" selected>Розы и пионы</option>
+                                    <option value="white-rose">Белые розы</option>
+                                    <option value="seasonal">Сезонный микс</option>
+                                </select>                                
+                            </div>
+
+                            <div class="calculator__field">
+                                <label for="size">Размер</label>
+                                <select id="size" name="size">
+                                    <option value="m" selected>Средний (M)</option>
+                                    <option value="s">Компактный (S)</option>
+                                    <option value="l">Большой (L)</option>
+                                </select>
+                            </div>
+
+                            <div class="calculator__field">
+                                <label for="wrap">Упаковка</label>
+                                <select id="wrap" name="wrap">
+                                    <option value="craft" selected>Крафт с золотой лентой</option>
+                                    <option value="silk">Шелковая лента</option>
+                                    <option value="box">Шляпная коробка</option>
+                                </select>
+                            </div>
+
+                            <div class="calculator__field">
+                                <label for="card">Открытка</label>
+                                <select id="card" name="card">
+                                    <option value="classic" selected>Классическая открытка</option>
+                                    <option value="none">Без открытки</option>
+                                    <option value="custom">Индивидуальный текст</option>
+                                </select>
+                            </div>
+
+                            <button type="button" class="btn btn--gold btn--big">Собрать букет</button>
+                        </div>
+                    </div>
+                    <div class="calculator__right">
+                        <img src="./images/flowers-bottom-2.png" alt="calculator-right">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const choicesOptions = {
+                searchEnabled: false,
+                itemSelectText: '',
+                shouldSort: false,
+                noChoicesText: 'Нет доступных опций',
+            }
+            const flowers = new Choices('#flowers', choicesOptions);
+            const size = new Choices('#size', choicesOptions);
+            const wrap = new Choices('#wrap', choicesOptions);
+            const card = new Choices('#card', choicesOptions);
+        });
+    </script>
+</body>
+</html>
