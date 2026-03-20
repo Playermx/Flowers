@@ -123,16 +123,16 @@ img {
   font-size: 1.25rem;
 }
 
-.container {
-  max-width: 1260px;
-  margin: 0 auto;
-  padding: 0 2.25rem;
-}
 @media (min-width: 1920px) {
   .container {
     max-width: 80%;
     margin: 0 auto;
   }
+}
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 2.25rem;
 }
 
 .header {
@@ -159,7 +159,7 @@ img {
   text-transform: uppercase;
 }
 .header__logo img {
-  max-width: 12rem;
+  max-width: 18rem;
 }
 .header__slogan h1 {
   text-align: center;
@@ -281,6 +281,7 @@ img {
 
 .catalog {
   margin-top: 2rem;
+  overflow: hidden;
 }
 .catalog h2 {
   font-size: 3rem;
@@ -317,14 +318,22 @@ img {
   background-position: left -3rem center;
   margin-top: 0.25rem;
 }
+.catalog .swiper {
+  overflow: visible;
+}
 .catalog__row {
+  margin-top: 2rem;
+}
+.catalog__row.swiper-wrapper {
+  overflow: visible;
+}
+.catalog__row:not(.swiper-wrapper) {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-top: 2rem;
 }
 @media (max-width: 767px) {
-  .catalog__row {
+  .catalog__row:not(.swiper-wrapper) {
     grid-template-columns: repeat(1, 1fr);
   }
 }

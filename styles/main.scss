@@ -131,15 +131,15 @@ img {
   }
 }
 
-.container {
-  max-width: 1260px;
-  margin: 0 auto;
-  padding: 0 2.25rem;
-  
+.container {   
   @media (min-width: 1920px) {
     max-width: 80%;
     margin: 0 auto;
   }
+
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 2.25rem;
 }
 
 .header {
@@ -167,7 +167,7 @@ img {
     }
 
     & img {
-      max-width: 12rem;
+      max-width: 18rem;
     }
   }
 
@@ -304,6 +304,7 @@ img {
 
 .catalog {
   margin-top: 2rem;
+  overflow: hidden;
 
   & h2 {
     font-size: 3rem;
@@ -344,11 +345,22 @@ img {
     }
   }
 
+  & .swiper {
+    overflow: visible;
+  }
+
   &__row {
+    margin-top: 2rem;
+
+    &.swiper-wrapper {
+      overflow: visible;
+    }
+  }
+
+  &__row:not(.swiper-wrapper) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 2rem;
 
     @media (max-width: 767px) {
       grid-template-columns: repeat(1, 1fr);
