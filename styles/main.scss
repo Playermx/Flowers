@@ -34,7 +34,7 @@ body {
   min-height: 100vh;
   font-size: 16px;
   background-color: #000;
-  background-image: url("../images/main-3.png");
+  background-image: url("../images/main-3.webp");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -132,14 +132,16 @@ img {
 }
 
 .container {   
-  @media (min-width: 1920px) {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 2.25rem;
+
+  @media screen and (min-width: 1920px) {
     max-width: 80%;
     margin: 0 auto;
   }
 
-  max-width: 1260px;
-  margin: 0 auto;
-  padding: 0 2.25rem;
+  
 }
 
 .header {
@@ -233,7 +235,7 @@ img {
     height: .75rem;
     flex: 0 0 calc(35% - 3rem);
     max-width: calc(35% - 3rem);
-    background-image: url('../images/line-left.png');
+    background-image: url('../images/line-left.webp');
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: right -3rem center;
@@ -246,7 +248,7 @@ img {
     height: .75rem;
     flex: 0 0 calc(35% - 3rem);
     max-width: calc(35% - 3rem);
-    background-image: url('../images/line-left.png');
+    background-image: url('../images/line-left.webp');
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: left -3rem center;
@@ -323,7 +325,7 @@ img {
       height: .75rem;
       flex: 0 0 calc(40% - 3rem);
       max-width: calc(40% - 3rem);
-      background-image: url('../images/line-left.png');
+      background-image: url('../images/line-left.webp');
       background-repeat: no-repeat;
       background-size: 100% auto;
       background-position: right -3rem center;
@@ -337,7 +339,7 @@ img {
       height: .75rem;
       flex: 0 0 calc(40% - 3rem);
       max-width: calc(40% - 3rem);
-      background-image: url('../images/line-left.png');
+      background-image: url('../images/line-left.webp');
       background-repeat: no-repeat;
       background-size: 100% auto;
       background-position: left -3rem center;
@@ -368,7 +370,7 @@ img {
   }
 
   &__item {
-    background-image: url('../images/item-bg.png');
+    background-image: url('../images/item-bg.webp');
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
